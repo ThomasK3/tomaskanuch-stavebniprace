@@ -244,14 +244,8 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        
-        {/* Mapa */}
-        <div className="mt-12 rounded-lg overflow-hidden shadow-md h-96 relative">
-          <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-            <p className="text-gray-500">Zde bude mapa s lokací (Google Maps)</p>
-          </div>
-        </div>
       </div>
+
     </section>
   );
 }

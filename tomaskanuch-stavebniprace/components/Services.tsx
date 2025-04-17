@@ -1,6 +1,7 @@
 // components/Services.tsx
 import TriangleIcon from './TriangleIcon';
 import ServiceCard from './ServiceCard';
+import Link from 'next/link';
 
 export default function Services() {
   const services = [
@@ -50,12 +51,17 @@ export default function Services() {
         </div>
         
         <div className="mt-16 text-center">
-          <button className="bg-white border-2 border-[#1AC8ED] text-[#1AC8ED] hover:bg-[#1AC8ED] hover:text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center mx-auto">
-            Více o našich službách
-            <div className="ml-2">
-              <TriangleIcon color="currentColor" size={12} direction="right" />
-            </div>
-          </button>
+          <div className="inline-block">
+            <Link
+              href="/sluzby"
+              className="bg-white border-2 border-[#1AC8ED] text-[#1AC8ED] hover:bg-[#1AC8ED] hover:text-white font-bold py-3 px-8 rounded-md transition duration-300 flex items-center"
+            >
+              Více o našich službách
+              <div className="ml-2">
+                <TriangleIcon color="currentColor" size={12} direction="right" />
+              </div>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
