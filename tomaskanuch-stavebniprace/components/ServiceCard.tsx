@@ -1,13 +1,15 @@
 // components/ServiceCard.tsx
+import Link from 'next/link';
 import TriangleIcon from './TriangleIcon';
 
 interface ServiceCardProps {
   title: string;
   description: string;
   icon: string;
+  href: string; // Přidaný prop pro odkaz
 }
 
-export default function ServiceCard({ title, description, icon }: ServiceCardProps) {
+export default function ServiceCard({ title, description, icon, href }: ServiceCardProps) {
   return (
     <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 relative group overflow-hidden text-gray-800">
       {/* Dekorativní trojúhelník v pozadí */}
@@ -30,13 +32,16 @@ export default function ServiceCard({ title, description, icon }: ServiceCardPro
       
       <p className="text-[#9093A2] relative z-10">{description}</p>
       
-      {/* Tlačítko s hover efektem */}
-      <button className="mt-6 text-[#1AC8ED] font-medium flex items-center group-hover:underline relative z-10">
+      {/* Tlačítko s hover efektem - změněno na Link komponentu */}
+      <Link 
+        href={href} 
+        className="mt-6 text-[#1AC8ED] font-medium flex items-center group-hover:underline relative z-10"
+      >
         <span>Zjistit více</span>
         <div className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
           <TriangleIcon color="#1AC8ED" size={8} direction="right" />
         </div>
-      </button>
+      </Link>
     </div>
   );
 }

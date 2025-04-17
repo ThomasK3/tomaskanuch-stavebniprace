@@ -62,13 +62,13 @@ export default function Navbar() {
               Služby
             </Link>
             <Link 
-              href="#galerie" 
+              href="/galerie" 
               className="text-gray-800 hover:text-[#1AC8ED] transition duration-300"
             >
               Galerie
             </Link>
             <Link 
-              href="#kontakt" 
+              href="/kontakt" 
               className="text-gray-800 hover:text-[#1AC8ED] transition duration-300"
             >
               Kontakt

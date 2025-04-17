@@ -1,60 +1,62 @@
 // app/sluzby/page.tsx
 import Navbar from '@/components/Navbar';
-import TriangleIcon from '@/components/TriangleIcon';
-import ServiceDetail from '@/components/ServiceDetail';
-import Contact from '@/components/Contact';
-import Map from '@/components/Map';
 import Footer from '@/components/Footer';
+import ServiceDetail from '@/components/ServiceDetail';
+import CTA from '@/components/CTA';
+import TriangleIcon from '@/components/TriangleIcon';
 
-export default function SluzbyPage() {
-  // Data pro detailní popis služeb
-  const serviceDetails = [
+export default function Services() {
+  const services = [
     {
       id: 'rekonstrukce',
       title: 'Rekonstrukce',
       description: [
-        'Nabízíme profesionální rekonstrukce bytových i nebytových prostor s důrazem na kvalitu a preciznost.',
-        'Každý projekt začíná podrobnou konzultací, během které zjistíme vaše požadavky a navrhneme nejlepší řešení.',
-        'Naše služby zahrnují kompletní realizaci od bourání, přes instalace až po finální úpravy povrchů.'
+        'Nabízíme komplexní i částečné rekonstrukce bytů, domů a komerčních prostor s důrazem na kvalitu a spokojenost zákazníka.',
+        'Naše služby zahrnují demoliční práce, stavební úpravy, změny dispozic, rekonstrukce koupelen a kuchyní, nové omítky, podlahy, elektroinstalaci a další.',
+        'Ke každému projektu přistupujeme individuálně a snažíme se maximálně vyhovět potřebám a představám zákazníka.'
       ],
-      imageUrl: '/images/projects/rekonstrukce.jpg',
+      imageUrl: 'https://placehold.co/600x400?text=Rekonstrukce',
       benefits: [
-        'Rychlé a profesionální provedení',
-        'Dodržování termínů a rozpočtů',
-        'Konzultace a poradenství v průběhu celého projektu',
-        'Kvalitní materiály a moderní technologie'
+        'Komplexní řešení na klíč',
+        'Odborné poradenství a návrhy',
+        'Kvalitní materiály a zpracování',
+        'Dodržení dohodnutých termínů',
+        'Cenová transparentnost'
       ]
     },
     {
       id: 'zednicke-prace',
       title: 'Zednické práce',
       description: [
-        'Specializujeme se na všechny typy zednických prací od drobných oprav až po rozsáhlé stavební projekty.',
-        'Využíváme moderní technologie a postupy, které zaručují dlouhou životnost a špičkovou kvalitu.',
-        'Naši zkušení řemeslníci mají mnohaletou praxi a dbají na každý detail.'
+        'Provádíme veškeré zednické práce od drobných oprav až po rozsáhlejší stavební úpravy.',
+        'Specializujeme se na zdění příček, opravy omítek, betonování, sádrování, štukování a další zednické práce.',
+        'Klademe důraz na precizní provedení a používáme kvalitní materiály pro zajištění dlouhé životnosti.'
       ],
-      imageUrl: '/images/projects/zednicke-prace.jpg',
+      imageUrl: 'https://placehold.co/600x400?text=Zednické+práce',
       benefits: [
+        'Profesionální přístup',
+        'Letité zkušenosti v oboru',
         'Kvalitní řemeslné zpracování',
-        'Odborné poradenství při výběru materiálů',
-        'Čistota na pracovišti během i po dokončení prací',
-        'Flexibilita a přizpůsobení harmonogramu'
-      ]
+        'Flexibilita a přizpůsobení požadavkům',
+        'Čistota a pořádek na pracovišti'
+      ],
+      reverse: true
     },
     {
       id: 'obklady-dlazby',
       title: 'Obklady a dlažby',
       description: [
-        'Pokládáme veškeré typy obkladů a dlažeb včetně velkoformátových prvků a mozaik.',
-        'Pracujeme s keramikou, přírodním kamenem, porcelánem a dalšími materiály podle vašich preferencí.',
-        'Zajistíme nejen samotnou pokládku, ale i přípravu podkladu, hydroizolaci a finální spárování.'
+        'Nabízíme profesionální pokládku obkladů a dlažeb v koupelnách, kuchyních, na terasách i v komerčních prostorách.',
+        'Pracujeme s různými typy materiálů včetně keramiky, porcelánu, přírodního kamene a velkoformátových obkladů.',
+        'Zajistíme kompletní realizaci včetně přípravy podkladu, hydroizolace, pokládky a spárování.'
       ],
-      imageUrl: '/images/projects/obklady-dlazby.jpg',
+      imageUrl: 'https://placehold.co/600x400?text=Obklady+a+dlažby',
       benefits: [
-        'Precizní pokládka i složitých vzorů',
-        'Zkušenosti s velkoplošnými formáty',
-        'Kvalitní hydroizolace a podkladové vrstvy',
-        'Detailní zaměření a plánování spotřeby materiálu'
+        'Precizní pokládka a zaměření',
+        'Zkušenosti s různými druhy materiálů',
+        'Řešení komplexních projektů',
+        'Poradenství při výběru materiálů',
+        'Moderní techniky a postupy'
       ]
     }
   ];
@@ -62,36 +64,32 @@ export default function SluzbyPage() {
   return (
     <main>
       <Navbar />
-
-      {/* Hero sekce pro stránku služeb */}
-      <section className="relative h-80 md:h-96 flex items-center overflow-hidden bg-white mt-16">
-        {/* Pozadí s geometrickými prvky */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute -right-20 top-20 opacity-10">
-            <TriangleIcon color="#1AC8ED" size={200} direction="left" />
-          </div>
-          <div className="absolute left-40 bottom-20 opacity-10">
-            <TriangleIcon color="#9CD336" size={150} direction="up" />
-          </div>
+      
+      {/* Banner sekce - obsahuje padding-top pro odsazení od fixed navigace */}
+      <section className="pt-32 pb-16 bg-gray-50 relative overflow-hidden">
+        {/* Dekorativní trojúhelník */}
+        <div className="absolute top-0 right-0 w-96 h-96 -translate-y-1/2 translate-x-1/2 opacity-5">
+          <div className="w-full h-full bg-[#1AC8ED]" style={{
+            clipPath: 'polygon(0 100%, 100% 0, 100% 100%)'
+          }}></div>
         </div>
         
-        {/* Obsah Hero sekce */}
-        <div className="container mx-auto px-4 z-10 text-center">
-          <div className="flex justify-center mb-4">
-            <TriangleIcon color="#1AC8ED" size={30} direction="up" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center">
+            <div className="flex justify-center mb-4">
+              <TriangleIcon color="#9CD336" size={30} direction="up" />
+            </div>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-gray-800">Naše služby</h1>
+            <p className="text-[#9093A2] max-w-2xl mx-auto text-lg">
+              Prohlédněte si detaily služeb, které nabízíme. Specializujeme se na rekonstrukce, zednické práce a pokládku obkladů a dlažeb. 
+              Ke každé zakázce přistupujeme individuálně a s maximální pečlivostí.
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-            Naše <span className="text-[#1AC8ED]">služby</span>
-          </h1>
-          <p className="text-[#9093A2] text-xl mb-8 max-w-2xl mx-auto">
-            Specializujeme se na rekonstrukce, zednické práce a pokládku 
-            obkladů a dlažeb. Vždy s důrazem na kvalitu a spokojenost zákazníka.
-          </p>
         </div>
       </section>
-
-      {/* Detailní popis jednotlivých služeb */}
-      {serviceDetails.map((service, index) => (
+      
+      {/* Služby - detail */}
+      {services.map((service, index) => (
         <ServiceDetail 
           key={service.id}
           id={service.id}
@@ -99,14 +97,16 @@ export default function SluzbyPage() {
           description={service.description}
           imageUrl={service.imageUrl}
           benefits={service.benefits}
-          reverse={index % 2 !== 0}
+          reverse={service.reverse}
         />
       ))}
-
-      {/* Kontaktní sekce */}
-      <Contact />
       
-      {/* Patička */}
+      {/* CTA sekce */}
+      <CTA 
+        title="Zaujala vás některá z našich služeb?"
+        description="Kontaktujte nás pro nezávaznou konzultaci nebo cenovou nabídku. Rádi vám poradíme s vaším projektem a najdeme optimální řešení."
+      />
+      
       <Footer />
     </main>
   );

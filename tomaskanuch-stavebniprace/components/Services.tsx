@@ -9,19 +9,22 @@ export default function Services() {
       id: 1,
       title: 'Rekonstrukce',
       description: 'Kompletní i částečné rekonstrukce bytů, domů a komerčních prostor s důrazem na kvalitu a spokojenost zákazníka.',
-      icon: '🏠'
+      icon: '🏠',
+      href: '/sluzby#rekonstrukce'
     },
     {
       id: 2,
       title: 'Zednické práce',
       description: 'Odborné zednické práce včetně zdění, omítek, betonování, sádrování a dalších stavebních úprav.',
-      icon: '🧱'
+      icon: '🧱',
+      href: '/sluzby#zednicke-prace'
     },
     {
       id: 3,
       title: 'Obklady a dlažby',
       description: 'Precizní pokládka obkladů a dlažeb v koupelnách, kuchyních, na terasách i v komerčních prostorách.',
-      icon: '🛁'
+      icon: '🛁',
+      href: '/sluzby#obklady-dlazby'
     }
   ];
 
@@ -46,6 +49,7 @@ export default function Services() {
               title={service.title}
               description={service.description}
               icon={service.icon}
+              href={service.href}
             />
           ))}
         </div>

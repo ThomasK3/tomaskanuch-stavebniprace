@@ -1,5 +1,6 @@
 // components/Footer.tsx
 import Link from 'next/link';
+import CopyText from './CopyText';
 import TriangleIcon from './TriangleIcon';
 
 export default function Footer() {
@@ -45,7 +46,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#sluzby" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
+                <Link href="/sluzby" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
                   <div className="mr-2">
                     <TriangleIcon color="#1AC8ED" size={8} direction="right" />
                   </div>
@@ -53,7 +54,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#galerie" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
+                <Link href="/galerie" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
                   <div className="mr-2">
                     <TriangleIcon color="#1AC8ED" size={8} direction="right" />
                   </div>
@@ -61,7 +62,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#kontakt" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
+                <Link href="/kontakt" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
                   <div className="mr-2">
                     <TriangleIcon color="#1AC8ED" size={8} direction="right" />
                   </div>
@@ -81,7 +82,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
+                <Link href="/sluzby#rekonstrukce" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
                   <div className="mr-2">
                     <TriangleIcon color="#1AC8ED" size={8} direction="right" />
                   </div>
@@ -89,7 +90,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
+                <Link href="/sluzby#zednicke-prace" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
                   <div className="mr-2">
                     <TriangleIcon color="#1AC8ED" size={8} direction="right" />
                   </div>
@@ -97,21 +98,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
+                <Link href="/sluzby#obklady-dlazby" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
                   <div className="mr-2">
                     <TriangleIcon color="#1AC8ED" size={8} direction="right" />
                   </div>
                   Obklady a dlažby
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300 flex items-center">
-                  <div className="mr-2">
-                    <TriangleIcon color="#1AC8ED" size={8} direction="right" />
-                  </div>
-                  Realizace koupelen
-                </Link>
-              </li>
+
             </ul>
           </div>
           
@@ -131,7 +125,10 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span>Stavební 123, 123 45 Město</span>
+                <CopyText 
+                  text="V Nivách 38, Jablonec nad Nisou 466 02" 
+                  label="Adresa zkopírována!" 
+                />
               </li>
               <li className="flex items-start">
                 <div className="mr-3 mt-1 text-[#1AC8ED]">
@@ -139,7 +136,10 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
-                <span>+420 775 028 131</span>
+                <CopyText 
+                  text="+420 775 028 131" 
+                  label="Telefon zkopírován!" 
+                />
               </li>
               <li className="flex items-start">
                 <div className="mr-3 mt-1 text-[#1AC8ED]">
@@ -147,7 +147,10 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <span>info@tomaskanuch.cz</span>
+                <CopyText 
+                  text="tomaskanuch@seznam.cz" 
+                  label="Email zkopírován!" 
+                />
               </li>
             </ul>
           </div>
@@ -159,8 +162,8 @@ export default function Footer() {
             &copy; {currentYear} Tomáš Kanůch - Stavební práce. Všechna práva vyhrazena.
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300">Zásady ochrany osobních údajů</a>
-            <a href="#" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300">Obchodní podmínky</a>
+            <a href="/zasady-ochrany-osobnich-udaju" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300">Zásady ochrany osobních údajů</a>
+            <a href="/obchodni-podminky" className="text-gray-400 hover:text-[#1AC8ED] transition duration-300">Obchodní podmínky</a>
           </div>
         </div>
       </div>

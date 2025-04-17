@@ -3,7 +3,11 @@
 import { useState } from 'react';
 import TriangleIcon from './TriangleIcon';
 
-export default function Contact() {
+interface ContactProps {
+  showTitle?: boolean;
+}
+
+export default function Contact({ showTitle = true }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -56,16 +60,18 @@ export default function Contact() {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-4">
-            <TriangleIcon color="#1AC8ED" size={30} direction="up" />
+        {showTitle && (
+          <div className="text-center mb-16">
+            <div className="flex justify-center mb-4">
+              <TriangleIcon color="#1AC8ED" size={30} direction="up" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Kontaktujte nás</h2>
+            <p className="text-[#9093A2] max-w-xl mx-auto">
+              Máte zájem o naše služby nebo potřebujete poradit? Neváhejte nás kontaktovat.
+              Ozveme se vám co nejdříve.
+            </p>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Kontaktujte nás</h2>
-          <p className="text-[#9093A2] max-w-xl mx-auto">
-            Máte zájem o naše služby nebo potřebujete poradit? Neváhejte nás kontaktovat.
-            Ozveme se vám co nejdříve.
-          </p>
-        </div>
+        )}
         
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Kontaktní informace */}
@@ -91,7 +97,7 @@ export default function Contact() {
                 
                 <div>
                   <h4 className="font-bold mb-1 text-gray-800">Telefon</h4>
-                  <a href="tel:+420123456789" className="text-[#1AC8ED] hover:underline">+420 123 456 789</a>
+                  <a href="tel:+420775028131" className="text-[#1AC8ED] hover:underline">+420 775 028 131</a>
                 </div>
                 
                 <div>
@@ -245,7 +251,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
